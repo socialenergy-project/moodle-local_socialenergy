@@ -30,7 +30,7 @@ class request {
     public $error = '';
     private $request = null;
     private $requestheaders = '';
-    private $response = null;
+    public $response = null;
     private $lastrawresponse = '';
     private $url = null;
     private $method = null;
@@ -45,7 +45,7 @@ class request {
             $this->request = $params;
         }
         if (!empty($header)) {
-            $this->requestheaders = explode("\n", $header);
+            $this->requestheaders = $header;
         }
     }
 
@@ -54,8 +54,6 @@ class request {
         curl_setopt($ch, CURLOPT_URL, $this->url);
         if (!empty($this->requestheaders)) {
             curl_setopt($ch, CURLOPT_HTTPHEADER, $this->requestheaders);
-        } else {
-            curl_setopt($ch, CURLOPT_HEADER, 0);
         }
         if ($this->method === 'POST') {
             curl_setopt($ch, CURLOPT_POST, true);
@@ -74,7 +72,6 @@ class request {
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 6);
         curl_setopt($ch, CURLOPT_TIMEOUT, 300);
-        curl_setopt($ch, CURLOPT_HEADER, true);
 
         $this->lastrawresponse = curl_exec($ch);
         $this->info = curl_getinfo($ch);
@@ -93,19 +90,7 @@ class request {
                 return false;
         }
 
-        if (stristr($this->info['content_type'], 'application/json') !== false) {
-            if (!empty($this->lastrawresponse)) {
-                $this->response = json_decode($this->lastrawresponse, true);
-                if ($this->response === null) {
-                    $this->error = htmlspecialchars($this->lastrawresponse);
-                    return false;
-                }
-            } else {
-                $this->response = null;
-            }
-        } else {
-            $this->response = $this->lastrawresponse;
-        }
+        $this->response = $this->lastrawresponse;
 
         return true;
     }

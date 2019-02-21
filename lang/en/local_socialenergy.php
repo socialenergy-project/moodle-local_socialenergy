@@ -25,4 +25,8 @@
 $string['pluginname'] = 'Social Energy Custom Services';
 $string['competencyframework'] = 'Competency framework';
 $string['learningplanname'] = 'Default learning plan name';
+$string['postmantoken'] = 'GSRN token';
+$string['communitycategoryid'] = 'Communities parent category ID';
+$string['socialstatusurl'] = 'GSRN social status service URL';
 $string['loggedoutredirecturl'] = 'Redirect to URL after user logged out';
+$string['task:synccommunities'] = 'Synchronize Social Energy communities';

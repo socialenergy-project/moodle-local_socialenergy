@@ -40,5 +40,8 @@ if ( $hassiteconfig ) {
         $settings->add(new admin_setting_configselect('local_socialenergy/competencyframeworkid', get_string('competencyframework', 'local_socialenergy'), '', '', $options));
         $settings->add( new admin_setting_configtext('local_socialenergy/learningplanname', get_string('learningplanname', 'local_socialenergy'), '', '', PARAM_TEXT));
         $settings->add( new admin_setting_configtext('local_socialenergy/loggedoutredirecturl', get_string('loggedoutredirecturl', 'local_socialenergy'), '', '', PARAM_URL));
+        $settings->add( new admin_setting_configtext('local_socialenergy/postmantoken', get_string('postmantoken', 'local_socialenergy'), '', '', PARAM_TEXT));
+        $settings->add( new admin_setting_configtext('local_socialenergy/communitycategoryid', get_string('communitycategoryid', 'local_socialenergy'), '', '', PARAM_INT));
+        $settings->add( new admin_setting_configtext('local_socialenergy/socialstatusurl', get_string('socialstatusurl', 'local_socialenergy'), '', '', PARAM_URL));
     }
 }

@@ -24,11 +24,14 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'local_socialenergy';
-$plugin->version  = 2019022104;   // The (date) version of this module + 2 extra digital for daily versions.
-$plugin->release = '1.0 (Build: 2018110901)';
-$plugin->requires = 2017111301.04;  // Requires this Moodle version - at least 3.4.
-$plugin->maturity = MATURITY_STABLE;
-$plugin->dependencies = array(
-    'block_dedication' => 2017042300,
+$tasks = array(
+    array(
+        'classname' => 'local_socialenergy\task\synccommunities',
+        'blocking' => 0,
+        'minute' => '*/20',
+        'hour' => '*',
+        'day' => '*',
+        'dayofweek' => '*',
+        'month' => '*'
+    ),
 );
