@@ -186,7 +186,7 @@ In order to use the LCMS platform as a standalone platform it should be imported
 
 ## Navigation and visualization
 
-[![SOCIALENERGY LCMS DEMO](https://img.youtube.com/vi/DeF-VgEPRCo/0.jpg)](https://www.youtube.com/watch?v=DeF-VgEPRCo)
+[![SOCIALENERGY LCMS DEMO](https://img.youtube.com/vi/jLG7UW-sNDw/0.jpg)](https://www.youtube.com/watch?v=jLG7UW-sNDw)
 
 ### ACKNOWLEDGMENT
 
